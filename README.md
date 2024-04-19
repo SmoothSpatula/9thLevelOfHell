@@ -5,7 +5,7 @@ Credit to Klehrik for literally everything lol
 
 DISCLAIMER: This is a JOKE difficulty mod
 
-**VERY IMPORTANT NOTE**: If you ever uninstall this mod, make sure the saved Difficulty selection on the character select screen is **not** set to Deluge, as the game will crash (due to pointing at a no longer existing difficulty).
+**VERY IMPORTANT NOTE**: If you ever uninstall this mod, make sure the saved Difficulty selection on the character select screen is **not** set to 9th Level Of Hell, as the game will crash (due to pointing at a no longer existing difficulty).
 
 ---
 
