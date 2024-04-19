@@ -24,9 +24,6 @@ else log.info("Failed to load difficulty sfx.") end
 
 local diff_id = -2
 
-for i = 1, 20 do
-    gm.difficulty_create("a", "b")
-end
 
 -- Parameters
 -- * Remember to update the description text below if modified
