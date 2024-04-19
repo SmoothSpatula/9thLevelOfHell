@@ -28,7 +28,7 @@ local diff_id = -2
 -- Parameters
 -- * Remember to update the description text below if modified
 local point_scaling = 1.0
-local speed_bonus = 0.50
+local speed_bonus = 0.5
 local healing_reduction = 1.0
 
 
@@ -58,13 +58,13 @@ gm.pre_script_hook(gm.constants.step_actor, function(self, other, result, args)
         self.ninth_speed_boost = true
 
         if self.pHmax ~= nil then
-            self.pHmax = self.pHmax * (1 - speed_bonus)
+            self.pHmax = self.pHmax * (1 + speed_bonus)
             self.pHmax_base = self.pHmax
         end
 
         -- Reduce attack speed
         if self.attackSpeed ~= nil then
-            self.attackSpeed = self.attackSpeed * (1 - speed_bonus)
+            self.attackSpeed = self.attackSpeed * (1 + speed_bonus)
             self.attackSpeedBase = self.attackSpeed
         end
     end
