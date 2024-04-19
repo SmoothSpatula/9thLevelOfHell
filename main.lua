@@ -54,8 +54,8 @@ end)
 
 gm.pre_script_hook(gm.constants.step_actor, function(self, other, result, args)
     -- Apply speed and attack speed reduction to players
-    if enabled and self.team == 2.0 and self.9th_speed_boost == nil then
-        self.9th_speed_boost = true
+    if enabled and self.team == 2.0 and self.ninth_speed_boost == nil then
+        self.ninth_speed_boost = true
 
         if self.pHmax ~= nil then
             self.pHmax = self.pHmax * (1 - speed_bonus)
