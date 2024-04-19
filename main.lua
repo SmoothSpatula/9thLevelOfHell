@@ -37,7 +37,7 @@ local healing_reduction = 0.0
 gui.add_imgui(function()
     if ImGui.Begin("9th Level Of Hell") then
         -- Description
-        ImGui.Text("Adds a fourth difficulty option, for\nthose who have conquered Monsoon and Deluge.\n\nIncreases Director Credits by 100%,\nenemy attack and move speed by 50%,\disables healing, and reduces player speed\nand attack speed by 25%.")
+        ImGui.Text("Adds a fifth difficulty option, for\nthose who have conquered Monsoon and Deluge.\n\nIncreases Director Credits by 100%,\nenemy attack and move speed by 50%,\disables healing, and reduces player speed\nand attack speed by 25%.")
     end
 
     ImGui.End()
