@@ -32,7 +32,7 @@ end
 -- * Remember to update the description text below if modified
 local point_scaling = 1.0
 local speed_bonus = 0.50
-local healing_reduction = 0.0
+local healing_reduction = 1.0
 
 
 -- ========== Main ==========
