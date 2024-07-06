@@ -31,7 +31,6 @@ local point_scaling = 1.0
 local speed_bonus = 0.5
 local healing_reduction = 1.0
 
-
 -- ========== Main ==========
 
 gui.add_imgui(function()
@@ -70,7 +69,6 @@ gm.pre_script_hook(gm.constants.step_actor, function(self, other, result, args)
     end
 end)
 
-
 gm.pre_script_hook(gm.constants.__input_system_tick, function()
     -- Initialize difficulty
     if not initialized_diff then
@@ -102,14 +100,11 @@ gm.pre_script_hook(gm.constants.__input_system_tick, function()
         current_char = select_.choice
         run_start_init = false
     end
-
-
     -- Check if 9th Level Of Hell is on
     if gm._mod_game_getDifficulty() == diff_id then
         enabled = true
-
+        
         if Helper.instance_exists(director) then
-
             -- Reset variables when starting a new run
             if director.time_start <= 0 then
                 if not run_start_init then
@@ -129,6 +124,7 @@ gm.pre_script_hook(gm.constants.__input_system_tick, function()
                 end
             else run_start_init = false
             end
+            
 
 
             -- Run this every second
@@ -140,6 +136,26 @@ gm.pre_script_hook(gm.constants.__input_system_tick, function()
                 director.points = director.points + (2 * point_scaling)
             end
         else director = Helper.find_active_instance(gm.constants.oDirectorControl)
+        end
+    else
+        enabled = false
+    end
+end)
+
+gm.post_script_hook(gm.constants.item_give, function()
+    if enabled then
+        local players = Helper.find_active_instance_all(gm.constants.oP)
+        for _, player in ipairs(players) do
+            player.hp_regen = 0
+        end
+    end
+end)
+
+gm.post_script_hook(gm.constants.recalculate_stats, function()
+    if enabled then
+        local players = Helper.find_active_instance_all(gm.constants.oP)
+        for _, player in ipairs(players) do
+            player.hp_regen = 0
         end
     end
 end)
